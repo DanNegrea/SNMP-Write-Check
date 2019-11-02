@@ -17,7 +17,7 @@ these will be passed directly to `snmpwalk` and `snmpset`
 **DISCLAIMAR** The script might change the value of the writable or cause other effects. Use with care.
 
 
-#Recommandations
+# Recommandations
 
 1. Disable SNMP v1 and v2c
 Both of this versions are communicationg in plain-text.
@@ -38,8 +38,3 @@ Block unauthorized machines that try to consume or change the configuration.
 
 6. Make use of a management network
 Segregating the SNMP traffic (and other managemnet network) onto a dedicated management network.
-
-#Reference
-man snmpcmd
-
-
