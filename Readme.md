@@ -10,14 +10,15 @@ Net-SNMP tools `snmpwalk` and `snmpset`
 # Usage
 `snmp-write-check.py [OPTIONS] AGENT [PARAMETERS]`
 where 
-* `[OPTIONS]` include version `-v`, community string `-c` or credentials for v3
-* `AGENT` IP address or hostname of device
+* `[OPTIONS]` includes info like version `-v`, community string `-c` or credentials for v3
+* `AGENT` represents the IP address or hostname of device
+
 these will be passed directly to `snmpwalk` and `snmpset`
 
-**DISCLAIMAR** The script might change the value of the writable or cause other effects. Use with care.
+**DISCLAIMAR** The script might change the value of the writable OID or cause other effects. Use with care.
 
 
-# Recommandations
+# SNMP Security Recommandations
 
 1. Disable SNMP v1 and v2c
 Both of this versions are communicationg in plain-text.
