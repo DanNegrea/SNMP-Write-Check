@@ -1,8 +1,9 @@
 # SNMP Write Check v0.1
 [@sec3ty](https://twitter.com/sec3ty)
 
-Returns the number of writable OIDs and list them.
-Parses the output of 'snmpwalk' and determines all elements that are readable. The return code of 'snmpset' is used to determine if an element's value can be written, by performing a write with the exact actual value.
+Returns the a list and the number of writable OIDs.
+
+It works by parsing the output of 'snmpwalk', followed by determining all elements that are writable. The return code of 'snmpset' is used to determine if an element's value can be written, the check performs a write by using the current value. This way it tries to not alter the entries.
 
 # Requirements for usage
 Net-SNMP tools `snmpwalk` and `snmpset` 
