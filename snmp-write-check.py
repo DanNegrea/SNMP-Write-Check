@@ -71,7 +71,12 @@ for line in out.splitlines():
             retcode = subprocess.call(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             
         if retcode == 0:
-            print(f"{oid} is writable")
+            cmd_get = f"snmpget {options_agent} {oid}"
+            args_get = shlex.split(cmd_get)
+            oidtype = subprocess.run(args_get, stdout=subprocess.PIPE).stdout.decode('utf-8')
+            m = re.search('=', oidtype)
+            oidtype_s = oidtype[m.end():]
+            print(f"{oid} is writable - "f"{oidtype_s}")
             count+=1
     except:
         pass
