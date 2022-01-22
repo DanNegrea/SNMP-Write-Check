@@ -3,10 +3,10 @@
 
 Returns the a list and the number of writable OIDs.
 
-It works by parsing the output of 'snmpwalk', followed by determining all elements that are writable. The return code of 'snmpset' is used to determine if an element's value can be written, the check performs a write by using the current value. This way it tries to not alter the entries.
+It works by parsing the output of 'snmpwalk', followed by determining all elements that are writable. The return code of 'snmpset' is used to determine if an element's value can be written, the check performs a write by using the current value. This way it tries to not alter the entries. Along the OID found to be writable it shows the type and current value obtained with 'snmpget'.
 
 # Requirements for usage
-Net-SNMP tools `snmpwalk` and `snmpset` 
+Net-SNMP tools `snmpwalk`, `snmpset` and `snmpget`
 
 # Usage
 `snmp-write-check.py [OPTIONS] AGENT [PARAMETERS]`
@@ -14,7 +14,7 @@ where
 * `[OPTIONS]` includes info like version `-v`, community string `-c` or credentials for v3
 * `AGENT` represents the IP address or hostname of device
 
-these will be passed directly to `snmpwalk` and `snmpset`
+these will be passed directly to `snmpwalk`, `snmpset` and `snmpget`
 
 **DISCLAIMAR** The script might change the value of the writable OID or cause other effects. Use with care.
 
